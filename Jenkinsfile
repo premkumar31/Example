@@ -42,7 +42,11 @@ pipeline {
                 {
                     steps
                     {
-                    bat 'echo running Statis tests' 
+                    bat 'echo running Static tests' 
+                    }
+                    post
+                    {
+                        bat 'echo Completed Static Testing'
                     }
                 }
                 stage('Unit Test')
@@ -51,6 +55,10 @@ pipeline {
                     {
                     bat 'echo running Unit tests' 
                     }
+                    post
+                    {
+                        bat 'echo Completed Unit Testing'
+                    }
                 }
                 stage('Integration Test')
                 {
@@ -58,12 +66,20 @@ pipeline {
                     {
                     bat 'echo running Integration tests' 
                     }
+                    post
+                    {
+                        bat 'echo Completed Intrgration Testing'
+                    }
                 }
                 stage('Qualification Tests')
                 {
                     steps
                     {
                     bat 'echo running Qualification tests' 
+                    }
+                    post
+                    {
+                        bat 'echo Completed Qualification Testing'
                     }
                 }
             }
