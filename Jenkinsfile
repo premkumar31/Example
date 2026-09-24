@@ -62,7 +62,7 @@ pipeline {
                     {
                         success
                         {
-                        bat 'echo Completed Static Testing'
+                        bat 'echo Completed Unit Testing'
                         }
                     }
                 }
@@ -76,7 +76,7 @@ pipeline {
                     {
                         success
                         {
-                        bat 'echo Completed Static Testing'
+                        bat 'echo Completed Integration Testing'
                         }                    }
                 }
                 stage('Qualification Tests')
@@ -89,8 +89,9 @@ pipeline {
                     {
                         success
                         {
-                        bat 'echo Completed Static Testing'
-                        }                    }
+                        bat 'echo Completed Qualification Testing'
+                        }                    
+                    }
                 }
             }
         }
