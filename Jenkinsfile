@@ -34,5 +34,39 @@ pipeline {
                 '''
             }
         }
+        stage('Test Stage')
+        {
+            parallel
+            {
+                stage('Static Analysis')
+                {
+                    steps
+                    {
+                    bat 'echo running Statis tests' 
+                    }
+                }
+                stage('Unit Test')
+                {
+                    steps
+                    {
+                    bat 'echo running Unit tests' 
+                    }
+                }
+                stage('Integration Test')
+                {
+                    steps
+                    {
+                    bat 'echo running Integration tests' 
+                    }
+                }
+                stage('Qualification Tests')
+                {
+                    steps
+                    {
+                    bat 'echo running Qualification tests' 
+                    }
+                }
+            }
+        }
     }
 }
