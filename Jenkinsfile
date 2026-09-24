@@ -46,7 +46,10 @@ pipeline {
                     }
                     post
                     {
+                        success
+                        {
                         bat 'echo Completed Static Testing'
+                        }
                     }
                 }
                 stage('Unit Test')
@@ -57,7 +60,10 @@ pipeline {
                     }
                     post
                     {
-                        bat 'echo Completed Unit Testing'
+                        success
+                        {
+                        bat 'echo Completed Static Testing'
+                        }
                     }
                 }
                 stage('Integration Test')
@@ -68,8 +74,10 @@ pipeline {
                     }
                     post
                     {
-                        bat 'echo Completed Intrgration Testing'
-                    }
+                        success
+                        {
+                        bat 'echo Completed Static Testing'
+                        }                    }
                 }
                 stage('Qualification Tests')
                 {
@@ -79,8 +87,10 @@ pipeline {
                     }
                     post
                     {
-                        bat 'echo Completed Qualification Testing'
-                    }
+                        success
+                        {
+                        bat 'echo Completed Static Testing'
+                        }                    }
                 }
             }
         }
